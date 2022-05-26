@@ -1,9 +1,9 @@
-# Fruit store
+# Coffee store
 State management in anuglar applications using ngrx/store
 
 ## Prerequisites
 - [Angular](https://angular.io)
-- [Express](https://expressjs.com/)
+- NgRx
 
 
 ## Getting started
