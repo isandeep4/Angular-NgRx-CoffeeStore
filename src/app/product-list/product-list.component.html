@@ -1,0 +1,30 @@
+<div *ngFor="let product of products | pagination: {perPage: perPage, currentPage: currentPage}">
+  <div class="products products-table">
+    <div class="product">
+        <div class="product-img">
+            <img src="../../assets/Roasted_coffee_beans.jpg">
+        </div>
+        <div class="product-content">
+            <h3>
+               <a [routerLink]="['/products', product.id]">
+                {{ product.blend_name }}
+              </a>
+            </h3>
+            <p class="product-text price">{{ product.id }}</p>
+            <p class="product-text genre">{{ product.origin }}</p>
+        </div>
+        <!-- <app-product [product]="product"></app-product> -->
+</div>
+</div>
+</div>
+<div>
+  <app-pagination
+    (prev)="prev($event)"
+    (goPage)="goToPage($event)"
+    (next)="next($event)"
+    [currentPage]="currentPage"
+    [pagesToShow]="pagesToShow"
+    [totalItemsCount]="products.length"
+    [perPage]="perPage"
+  ></app-pagination>
+</div>
