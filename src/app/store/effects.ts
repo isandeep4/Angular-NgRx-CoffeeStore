@@ -8,12 +8,12 @@ import { ProductService } from '../product.service';
 @Injectable()
 export class ShopEffects {
   @Effect()
-  loadFruits$ = this.actions$.pipe(
+  loadProducts$ = this.actions$.pipe(
     ofType(ActionTypes.LoadItems),
     mergeMap(() =>
       this.productService.getAll().pipe(
-        map(fruits => {
-          return { type: ActionTypes.LoadSuccess, payload: fruits };
+        map(products => {
+          return { type: ActionTypes.LoadSuccess, payload: products };
         }),
         catchError(() => EMPTY)
       )
